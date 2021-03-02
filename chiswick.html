@@ -25436,7 +25436,9 @@
                                                         formId: "9ab0c7da-9bcc-4ccd-9507-20f70f7b8894"
                                                     });
                                                     </script>
-                                                    <button type="button" class="modal-submit btn btn-primary">Submit</button>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" id="modal-success-submit" class="modal-submit btn btn-primary">Submit</button>   
                                                 </div>
                                               </div>
                                             </div>
@@ -27642,6 +27644,7 @@
                 $.ajax(settings).done(function (response) {
                 console.log(response);
                 $("iframe").contents().find(".hs-button").trigger("click");
+                $("#modal-success-submit").css("display","none");
                 });
                 
             });
