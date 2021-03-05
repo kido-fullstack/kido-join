@@ -25516,7 +25516,7 @@
                                                     </script>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" id="enquire-modal-submit" class="modal-submit btn btn-primary">Submit</button>   
+                                                    <button type="button" id="enquire-modal-submit" class="btn btn-primary">Submit</button>   
                                                 </div>
                                               </div>
                                             </div>
@@ -26893,7 +26893,7 @@
                     </div>
                     <div class="brz-wrapper-clone brz-css-nypjg click-popup">
                         <div class="brz-d-xs-flex brz-flex-xs-wrap brz-css-ptjvv">
-                            <div class="brz-wrapper-clone__item brz-css-yapxj" id="muwqzqvpwjymgkmxkzeusqtitqpxtydkpqvm"><a class="brz-a brz-btn brz-css-dxgkk brz-css-agyym" data-toggle="modal" data-target="#exampleModal" data-brz-link-type="popup" data-custom-id="muwqzqvpwjymgkmxkzeusqtitqpxtydkpqvm"><span class="brz-span brz-text__editor">Enquire now</span></a></div>
+                            <div class="brz-wrapper-clone__item brz-css-yapxj" id="muwqzqvpwjymgkmxkzeusqtitqpxtydkpqvm"><a class="brz-a brz-btn brz-css-dxgkk brz-css-agyym" data-toggle="modal" data-target="#enquireModal" data-brz-link-type="popup" data-custom-id="muwqzqvpwjymgkmxkzeusqtitqpxtydkpqvm"><span class="brz-span brz-text__editor">Enquire now</span></a></div>
                         </div>
                     </div>
                 </div>
@@ -28019,7 +28019,6 @@
                     "message":$("exampleModal").find("iframe").contents().find("#message-4e74926f-544f-4612-b0a7-9ce8318ae443").val()
                 };
 
-
                 form.append("data",JSON.stringify(data));
 
                 var settings = {
@@ -28042,32 +28041,34 @@
 
 
             $("body").on('click','#enquire-modal-submit',function(){
-                $("#enquireModal").find("iframe").html();
-                // var form = new FormData();
-                // form.append("api", "save_hubspot_lead");
-                // var data = {
-                //     "firstname":$("#enquireModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                //     "email":$("#enquireModal").find("iframe").contents().find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                //     "mobilephone":$("#enquireModal").find("iframe").contents().find("#phone-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                //     "desired_nursery_location":$("#enquireModal").find("iframe").contents().find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                //     "home_or_village":"1",
-                //     "message":$("#enquireModal").find("iframe").contents().find("#message-4e74926f-544f-4612-b0a7-9ce8318ae443").val()
-                // };
-                // form.append("data",JSON.stringify(data));
-                // var settings = {
-                // "url": "https://dev.kido.school/questions/apis/api.php",
-                // "method": "POST",
-                // "timeout": 0,
-                // "processData": false,
-                // "mimeType": "multipart/form-data",
-                // "contentType": false,
-                // "data": form
-                // };
-                // $.ajax(settings).done(function (response) {
-                // // console.log(response);
-                // $("#enquireModal").find("iframe").contents().find(".hs-button").trigger("click");
-                // $("#enquireModal").css("display","none");
-                // });
+
+                // console.log($("#enquireModal").find("iframe").html());
+                var form = new FormData();
+                form.append("api", "save_hubspot_lead");
+                var data = {
+                    "firstname":$("#enquireModal").find("iframe").contents().find("#firstname-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
+                    "email":$("#enquireModal").find("iframe").contents().find("#email-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
+                    "mobilephone":$("#enquireModal").find("iframe").contents().find("#phone-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
+                    "desired_nursery_location":$("#enquireModal").find("iframe").contents().find("#choose_a_nursery-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
+                    "home_or_village":"1",
+                    "message":$("#enquireModal").find("iframe").contents().find("#message-1904fcd3-6caf-4d51-834f-77320b0bf716").val()
+                };
+                form.append("data",JSON.stringify(data));
+                var settings = {
+                "url": "https://dev.kido.school/questions/apis/api.php",
+                "method": "POST",
+                "timeout": 0,
+                "processData": false,
+                "mimeType": "multipart/form-data",
+                "contentType": false,
+                "data": form
+                };
+
+                $.ajax(settings).done(function (response) {
+                // console.log(response);
+                    $("#enquireModal").find("iframe").contents().find(".hs-button").trigger("click");
+                    $("#enquireModal").css("display","none");
+                });
             });
 
         });
