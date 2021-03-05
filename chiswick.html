@@ -25477,7 +25477,7 @@
                                                     <script>
                                                       hbspt.forms.create({
                                                         portalId: "9397213",
-                                                        formId: "9ab0c7da-9bcc-4ccd-9507-20f70f7b8894"
+                                                        formId: "4e74926f-544f-4612-b0a7-9ce8318ae443"
                                                     });
                                                     </script>
                                                 </div>
@@ -25488,6 +25488,49 @@
                                             </div>
                                           </div>
                                           <!-- modal ends -->
+
+
+
+
+
+                                          <!-- Equire modal -->
+
+
+                                          <div class="modal fade" id="enquireModal" tabindex="-1" role="dialog" aria-labelledby="enquireModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title" id="enquireModalLabel">Enquire Now</h5>
+                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                  </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <script charset="utf-8" type="text/javascript" src="hubspot-new.js"></script>
+                                                    <script>
+                                                      hbspt.forms.create({
+                                                          portalId: "9397213",
+                                                          formId: "1904fcd3-6caf-4d51-834f-77320b0bf716"
+                                                      });
+                                                    </script>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" id="enquire-modal-submit" class="btn btn-primary">Submit</button>   
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+
+
+
+
+
+
+
+
+
+
                                     </div>
                                     <div class="brz-css-xatbk brz-wrapper">
                                         <div class="brz-rich-text brz-css-zcudl" data-custom-id="tobngluipaxcdixdpjqnrdqbwgqguejvltux">
@@ -26751,11 +26794,14 @@
                     <div class="brz-css-xatbk brz-css-dzjhb brz-wrapper">
                         <div class="brz-spacer brz-css-euisj brz-css-cwimz"></div>
                     </div>
+
                     <div class="brz-wrapper-clone brz-css-nypjg click-popup">
                         <div class="brz-d-xs-flex brz-flex-xs-wrap brz-css-ptjvv">
-                            <div class="brz-wrapper-clone__item brz-css-yapxj" id="xgbgshzapuhtgisoivkozxxrqzyigeegomss"><a class="brz-a brz-btn brz-css-dxgkk brz-css-tbhms" data-toggle="modal" data-target="#exampleModal" data-brz-link-type="popup" data-custom-id="xgbgshzapuhtgisoivkozxxrqzyigeegomss"><span class="brz-span brz-text__editor">Have a question?</span></a></div>
+                            <div class="brz-wrapper-clone__item brz-css-yapxj" id="xgbgshzapuhtgisoivkozxxrqzyigeegomss"><a class="brz-a brz-btn brz-css-dxgkk brz-css-tbhms" data-toggle="modal" data-target="#enquireModal" data-brz-link-type="popup" data-custom-id="xgbgshzapuhtgisoivkozxxrqzyigeegomss"><span class="brz-span brz-text__editor">Enquire now</span></a></div>
                         </div>
                     </div>
+                    
+
                 </div>
             </div>
         </section>
@@ -27015,11 +27061,15 @@
                     <div class="brz-css-xatbk brz-css-dzjhb brz-css-khvmp brz-wrapper">
                         <div class="brz-spacer brz-css-euisj brz-css-gojif"></div>
                     </div>
+
+
                     <div class="brz-wrapper-clone brz-css-nypjg click-popup">
                         <div class="brz-d-xs-flex brz-flex-xs-wrap brz-css-ptjvv">
-                            <div class="brz-wrapper-clone__item brz-css-yapxj" id="muwqzqvpwjymgkmxkzeusqtitqpxtydkpqvm"><a class="brz-a brz-btn brz-css-dxgkk brz-css-agyym" data-toggle="modal" data-target="#exampleModal" data-brz-link-type="popup" data-custom-id="muwqzqvpwjymgkmxkzeusqtitqpxtydkpqvm"><span class="brz-span brz-text__editor">Ask us a question</span></a></div>
+                            <div class="brz-wrapper-clone__item brz-css-yapxj" id="xgbgshzapuhtgisoivkozxxrqzyigeegomss"><a class="brz-a brz-btn brz-css-dxgkk brz-css-tbhms" data-toggle="modal" data-target="#enquireModal" data-brz-link-type="popup" data-custom-id="xgbgshzapuhtgisoivkozxxrqzyigeegomss"><span class="brz-span brz-text__editor">Enquire now</span></a></div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </section>
@@ -28128,23 +28178,19 @@
         });
 
         $(document).ready(function(){
-            $("body").on('click','.modal-submit',function(){
+            $("body").on('click','#modal-success-submit',function(){
 
                 var form = new FormData();
                 form.append("api", "save_hubspot_lead");
 
                 var data = {
-                    "firstname":$("iframe").contents().find("#firstname-9ab0c7da-9bcc-4ccd-9507-20f70f7b8894").val(),
-                    "lastname":$("iframe").contents().find("#lastname-9ab0c7da-9bcc-4ccd-9507-20f70f7b8894").val(),
-                    "email":$("iframe").contents().find("#email-9ab0c7da-9bcc-4ccd-9507-20f70f7b8894").val(),
-                    "mobilephone":$("iframe").contents().find("#mobilephone-9ab0c7da-9bcc-4ccd-9507-20f70f7b8894").val(),
-                    "child_1_date_of_birth":$("iframe").contents().find("#child_1_date_of_birth-9ab0c7da-9bcc-4ccd-9507-20f70f7b8894").val(),
-                    "child_1_first_name":$("iframe").contents().find("#child_1_first_name-9ab0c7da-9bcc-4ccd-9507-20f70f7b8894").val(),
-                    "desired_nursery_location":$("iframe").contents().find("#desired_nursery_location-9ab0c7da-9bcc-4ccd-9507-20f70f7b8894").val(),
+                    "firstname":$("#exampleModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "email":$("#exampleModal").find("iframe").contents().find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "mobilephone":$("#exampleModal").find("iframe").contents().find("#phone-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "desired_nursery_location":$("#exampleModal").find("iframe").contents().find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
                     "home_or_village":"1",
-                    "message":$("iframe").contents().find("#message-9ab0c7da-9bcc-4ccd-9507-20f70f7b8894").val()
+                    "message":$("#exampleModal").find("iframe").contents().find("#message-4e74926f-544f-4612-b0a7-9ce8318ae443").val()
                 };
-
 
                 form.append("data",JSON.stringify(data));
 
@@ -28159,12 +28205,45 @@
                 };
 
                 $.ajax(settings).done(function (response) {
-                console.log(response);
-                $("iframe").contents().find(".hs-button").trigger("click");
+                // console.log(response);
+                $("exampleModal").find("iframe").contents().find(".hs-button").trigger("click");
                 $("#modal-success-submit").css("display","none");
                 });
                 
             });
+
+
+            $("body").on('click','#enquire-modal-submit',function(){
+
+                // console.log($("#enquireModal").find("iframe").html());
+                var form = new FormData();
+                form.append("api", "save_hubspot_lead");
+                var data = {
+                    "firstname":$("#enquireModal").find("iframe").contents().find("#firstname-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
+                    "email":$("#enquireModal").find("iframe").contents().find("#email-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
+                    "mobilephone":$("#enquireModal").find("iframe").contents().find("#phone-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
+                    "desired_nursery_location":$("#enquireModal").find("iframe").contents().find("#choose_a_nursery-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
+                    "home_or_village":"1",
+                    "message":$("#enquireModal").find("iframe").contents().find("#message-1904fcd3-6caf-4d51-834f-77320b0bf716").val()
+                };
+                form.append("data",JSON.stringify(data));
+                var settings = {
+                "url": "https://dev.kido.school/questions/apis/api.php",
+                "method": "POST",
+                "timeout": 0,
+                "processData": false,
+                "mimeType": "multipart/form-data",
+                "contentType": false,
+                "data": form
+                };
+
+                $.ajax(settings).done(function (response) {
+                // console.log(response);
+                    $("#enquireModal").find("iframe").contents().find(".hs-button").trigger("click");
+                    $("#enquireModal").css("display","none");
+                });
+            });
+
         });
 
         
