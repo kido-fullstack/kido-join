@@ -25466,6 +25466,10 @@
                                             <div class="brz-wrapper-clone__item brz-css-yapxj" id="izteqwyxakcxdgnsufnlverjvygryjiotlqz"><a class="brz-a brz-btn brz-css-dxgkk brz-css-ekvpm" data-toggle="modal" data-target="#exampleModal" data-brz-link-type="popup" data-custom-id="izteqwyxakcxdgnsufnlverjvygryjiotlqz"><span class="brz-span brz-text__editor">Book my tour</span></a></div>
                                         </div>
 
+
+
+
+
                                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                               <div class="modal-content">
@@ -25476,14 +25480,6 @@
                                                   </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <!-- <script charset="utf-8" type="text/javascript" src="hubspot.js"></script>
-                                                    <script>
-                                                      hbspt.forms.create({
-                                                        portalId: "9397213",
-                                                        formId: "9ab0c7da-9bcc-4ccd-9507-20f70f7b8894"
-                                                    });
-                                                    </script> -->
-
                                                     <script charset="utf-8" type="text/javascript" src="hubspot-new.js"></script>
                                                     <script>
                                                         hbspt.forms.create({
@@ -25498,6 +25494,35 @@
                                               </div>
                                             </div>
                                           </div>
+
+
+
+                                          <div class="modal fade" id="enquireModal" tabindex="-1" role="dialog" aria-labelledby="enquireModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title" id="enquireModalLabel">Enquire Now</h5>
+                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                  </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <script charset="utf-8" type="text/javascript" src="hubspot-new.js"></script>
+                                                    <script>
+                                                      hbspt.forms.create({
+                                                          portalId: "9397213",
+                                                          formId: "1904fcd3-6caf-4d51-834f-77320b0bf716"
+                                                      });
+                                                    </script>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" id="enquire-modal-submit" class="modal-submit btn btn-primary">Submit</button>   
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+
 
                                     </div>
                                     <div class="brz-css-xatbk brz-wrapper">
@@ -27980,18 +28005,18 @@
         });
 
         $(document).ready(function(){
-            $("body").on('click','.modal-submit',function(){
+            $("body").on('click','#modal-success-submit',function(){
 
                 var form = new FormData();
                 form.append("api", "save_hubspot_lead");
 
                 var data = {
-                    "firstname":$("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                    "email":$("iframe").contents().find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                    "mobilephone":$("iframe").contents().find("#phone-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                    "desired_nursery_location":$("iframe").contents().find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "firstname":$("exampleModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "email":$("exampleModal").find("iframe").contents().find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "mobilephone":$("exampleModal").find("iframe").contents().find("#phone-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "desired_nursery_location":$("exampleModal").find("iframe").contents().find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
                     "home_or_village":"1",
-                    "message":$("iframe").contents().find("#message-4e74926f-544f-4612-b0a7-9ce8318ae443").val()
+                    "message":$("exampleModal").find("iframe").contents().find("#message-4e74926f-544f-4612-b0a7-9ce8318ae443").val()
                 };
 
 
@@ -28008,12 +28033,43 @@
                 };
 
                 $.ajax(settings).done(function (response) {
-                console.log(response);
-                $("iframe").contents().find(".hs-button").trigger("click");
+                // console.log(response);
+                $("exampleModal").find("iframe").contents().find(".hs-button").trigger("click");
                 $("#modal-success-submit").css("display","none");
                 });
                 
             });
+
+
+            $("body").on('click','#enquire-modal-submit',function(){
+                $("#enquireModal").find("iframe").html();
+                // var form = new FormData();
+                // form.append("api", "save_hubspot_lead");
+                // var data = {
+                //     "firstname":$("#enquireModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                //     "email":$("#enquireModal").find("iframe").contents().find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                //     "mobilephone":$("#enquireModal").find("iframe").contents().find("#phone-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                //     "desired_nursery_location":$("#enquireModal").find("iframe").contents().find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                //     "home_or_village":"1",
+                //     "message":$("#enquireModal").find("iframe").contents().find("#message-4e74926f-544f-4612-b0a7-9ce8318ae443").val()
+                // };
+                // form.append("data",JSON.stringify(data));
+                // var settings = {
+                // "url": "https://dev.kido.school/questions/apis/api.php",
+                // "method": "POST",
+                // "timeout": 0,
+                // "processData": false,
+                // "mimeType": "multipart/form-data",
+                // "contentType": false,
+                // "data": form
+                // };
+                // $.ajax(settings).done(function (response) {
+                // // console.log(response);
+                // $("#enquireModal").find("iframe").contents().find(".hs-button").trigger("click");
+                // $("#enquireModal").css("display","none");
+                // });
+            });
+
         });
 
             //Get the button
