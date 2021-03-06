@@ -1,0 +1,100 @@
+<div class="brz-wrapper-clone brz-css-nypjg click-popup">
+  <div class="brz-d-xs-flex brz-flex-xs-wrap brz-css-ptjvv">
+      <div class="brz-wrapper-clone__item brz-css-yapxj" id="xgbgshzapuhtgisoivkozxxrqzyigeegomss"><a class="brz-a brz-btn brz-css-dxgkk brz-css-tbhms" data-toggle="modal" data-target="#exampleModal" data-brz-link-type="popup" data-custom-id="xgbgshzapuhtgisoivkozxxrqzyigeegomss"><span class="brz-span brz-text__editor">Have a question?</span></a></div>
+  </div>
+</div>
+
+
+<div class="brz-wrapper-clone brz-css-nypjg click-popup">
+  <div class="brz-d-xs-flex brz-flex-xs-wrap brz-css-ptjvv">
+      <div class="brz-wrapper-clone__item brz-css-yapxj" id="muwqzqvpwjymgkmxkzeusqtitqpxtydkpqvm"><a class="brz-a brz-btn brz-css-dxgkk brz-css-agyym" data-toggle="modal" data-target="#exampleModal" data-brz-link-type="popup" data-custom-id="muwqzqvpwjymgkmxkzeusqtitqpxtydkpqvm"><span class="brz-span brz-text__editor">Ask us a question</span></a></div>
+  </div>
+</div>
+
+
+
+<div class="brz-wrapper-clone brz-css-nypjg click-popup">
+    <div class="brz-d-xs-flex brz-flex-xs-wrap brz-css-ptjvv">
+        <div class="brz-wrapper-clone__item brz-css-yapxj" id="xgbgshzapuhtgisoivkozxxrqzyigeegomss"><a class="brz-a brz-btn brz-css-dxgkk brz-css-tbhms" data-toggle="modal" data-target="#enquireModal" data-brz-link-type="popup" data-custom-id="xgbgshzapuhtgisoivkozxxrqzyigeegomss"><span class="brz-span brz-text__editor">Enquire now</span></a></div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="enquireModal" tabindex="-1" role="dialog" aria-labelledby="enquireModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="enquireModalLabel">Enquire Now</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <script charset="utf-8" type="text/javascript" src="hubspot-new.js"></script>
+            <script>
+              hbspt.forms.create({
+                  portalId: "9397213",
+                  formId: "1904fcd3-6caf-4d51-834f-77320b0bf716"
+              });
+            </script>
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="enquire-modal-submit" class="btn btn-primary">Submit</button>   
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  Old : 9ab0c7da-9bcc-4ccd-9507-20f70f7b8894
+
+  New formId: "4e74926f-544f-4612-b0a7-9ce8318ae443"
+
+
+
+  href="mailto:camden@kido.school"
+
+  href="https://mail.google.com/"
+
+
+  href="mailto:chiswick@kido.school"
+
+
+
+  https://join.kido.school/camden.html
+  https://join.kido.school/clerkenwell.html
+  https://join.kido.school/chiswick.html
+  https://join.kido.school/crouchend.html
+  https://join.kido.school/goldersgreen.html
+  https://join.kido.school/greenwich.html
+  https://join.kido.school/wandsworth.html
+  https://join.kido.school/windsor.html
+
+
+
+  <style class="brz-style" id="custom-css"></style>
+  <style class="brz-style" id="dc-color"></style>
+  <style class="brz-style" id="custom-css">
+  <style class="brz-style"></style>
+
+
+
+  Spiritualist Temple, Rochester Square, Camden, London NW1 9RY, United Kingdom, Greater-london
+  
+  Unit 3B.04, Ram Quarter, Windsor High St
+
+  Unit 3B.04, Ram Quarter, Windsor High St, London, SW18 1TH
+
+  Clements Hall, 141 Central Street, Clerkenwell, London EC1V 8AP, UK, Greater-london
+
+  St Albans Church Hall, W Heath Dr, Golders Green, London NW11 7QG, United Kingdom, Greater-london
+
+  Kingdom Hall, Grove Rd, Windsor SL4 1JE, United Kingdom, Greater-london
+
+
++44 020 7684 3172
+
+020 8053 0876
+
+
+
