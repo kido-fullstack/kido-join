@@ -25333,10 +25333,64 @@
             color: #fff;
         }
 
+        #load-modal{
+            margin-top: 30%;
+        }
+
+        .btn-primary{
+            background-color: #00356b;
+        }
+
+        .bg-primary{
+            background-color: #00356b!important;
+        }
+
+        .modal-p-text{
+            font-size: 16px;
+            /* font-style: italic; */
+        }
+
+        .st-text{
+            font-size: 24px;
+        }
+
     </style>
+
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#myModal').modal('show');
+    });
+</script>
 </head>
 
 <body class="brz">
+
+    <section class="onload-modal">
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content" id="load-modal">
+            <div class="modal-header bg-primary">
+              <h2 class="modal-title text-white" id="exampleModalLabel">Upcoming Event</h2>
+              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <p>
+                        <strong class="st-text">Join Our Virtual Open Day - <small>10th April 2021 (10 am to 11am)</small>
+                        </strong><br/>
+                        <span class="modal-p-text">Next Saturday we'll be giving a tour of the nursery. You can see the space, meet the teachers and ask plenty of questions.</span>    
+                    </p>
+                    <a type="button" class="btn btn-sm btn-primary" href="https://www.eventbrite.co.uk/e/kido-crouch-end-nursery-preschool-virtual-open-day-tickets-148029457091" target="_blank">Book my space</a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <div class="brz-root__container brz-reset-all">
         <section id="zkcyrybibudqdpeiizppaozhskyzemwtvrgn" class="brz-section brz-section__header brz-css-zxqvq" data-uid="zkcyrybibudqdpeiizppaozhskyzemwtvrgn">
             <div class="brz-section__menu-item brz-css-oczak brz-css-rzvma" data-custom-id="wkdseqocetqjhtferhnhnnuzsbmaqlndofxt">
