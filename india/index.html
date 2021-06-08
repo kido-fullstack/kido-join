@@ -75,13 +75,13 @@
                     </div>
                     <div class="data border shadow-sm rounded p-4 mb-3">
                         <div class="form-group">
-                            <label for="child_dob" class="form-label">Child's date of birth <span class="text-danger">*</span></label>
+                            <label for="child_dob" class="form-label">Child's date of birth</label>
                             <input type="date" name="child_dob" class="form-control" id="child_dob" placeholder="Enter child DOB">
                         </div>
                     </div>
                     <div class="data border shadow-sm rounded p-4 mb-3">
                         <div class="form-group">
-                            <label for="program_interested_in_tslot1" class="form-label">Which Program would you like to opt for? <span class="text-danger">*</span></label>
+                            <label for="program_interested_in_tslot1" class="form-label">Which Program would you like to opt for?</label>
                             <div class="form-group pt-3">
                                 <select class="form-select" name="program_interested_in_tslot1" id="program_interested_in_tslot1">
                                     <option value="">Select the program</option>
@@ -145,7 +145,7 @@
             $("#city").val().length ?                  data["city"] = $("#city").val() :  errs += "Please provide city <br>";
             $("#postal_code").val().length ?           data["postal_code"] = $("#postal_code").val() :  errs += "Please provide Postal Code <br>";
             data["child_dob"] = $("#child_dob").val();
-            $("#program_interested_in_tslot1").val().length ? data["program_interested_in_tslot1"] = $("#program_interested_in_tslot1").val() :  errs += "Please provide program_interested_in_tslot1 <br>";
+            data["program_interested_in_tslot1"] = $("#program_interested_in_tslot1").val();
             data["lead_type"] = "admission-lead";  
             data["child_name"] = "";  
             data["lead_link"] = window.location.pathname;           
