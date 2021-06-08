@@ -174,7 +174,8 @@
 
                 $.ajax(settings).done(function (response) {
                     console.log(response);
-                    window.location = "thank-you/";
+                    var landinPg = data["lead_link"].substring(data["lead_link"].lastIndexOf('/') + 1);
+                    window.location = "/thank-you/"+landinPg;
                 });
             }
 
