@@ -27836,7 +27836,7 @@
                 var data = {
                     "firstname":$("#enquireModal").find("iframe").contents().find("#firstname-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
                     "email":$("#enquireModal").find("iframe").contents().find("#email-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
-                    "mobilephone":$("#enquireModal").find("iframe").contents().find("#mobilephone-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
+                    "mobilephone":$("#enquireModal").find("iframe").contents().find("#phone-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
                     "desired_nursery_location":$("#enquireModal").find("iframe").contents().find("#choose_a_nursery-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
                     "home_or_village":"1",
                     "message":$("#enquireModal").find("iframe").contents().find("#message-1904fcd3-6caf-4d51-834f-77320b0bf716").val()
@@ -27851,15 +27851,15 @@
                 "contentType": false,
                 "data": form
                 };
-                    for (var pair of form.entries()) {
-                        console.log(pair[0]+ ', ' + pair[1]); 
-                    }
+                    // for (var pair of form.entries()) {
+                    //     console.log(pair[0]+ ', ' + pair[1]); 
+                    // }
 
                 $.ajax(settings).done(function (response) {
                 // console.log(response);
                     $("#enquireModal").find("iframe").contents().find(".hs-button").trigger("click");
                     $("#enquireModal").css("display","none");
-                    // window.location = "thankyou.html";
+                    window.location = "thankyou.html";
                 });
             });
 
