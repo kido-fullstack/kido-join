@@ -27833,23 +27833,14 @@
                 // console.log($("#enquireModal").find("iframe").html());
                 var form = new FormData();
                 form.append("api", "save_hubspot_lead");
-                var ifrm = $("#enquireModal").find("iframe").contents();
                 var data = {
                     "firstname":$("#enquireModal").find("iframe").contents().find("#firstname-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
                     "email":$("#enquireModal").find("iframe").contents().find("#email-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
+                    "mobilephone":$("#enquireModal").find("iframe").contents().find("#phone-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
                     "desired_nursery_location":$("#enquireModal").find("iframe").contents().find("#choose_a_nursery-1904fcd3-6caf-4d51-834f-77320b0bf716").val(),
                     "home_or_village":"1",
                     "message":$("#enquireModal").find("iframe").contents().find("#message-1904fcd3-6caf-4d51-834f-77320b0bf716").val()
                 };
-
-                
-                if(ifrm.find("#phone-1904fcd3-6caf-4d51-834f-77320b0bf716").length){
-                    data["mobilephone"]=ifrm.find("#phone-1904fcd3-6caf-4d51-834f-77320b0bf716").val();
-                }else{
-                    data["mobilephone"]=ifrm.find("#mobilephone-1904fcd3-6caf-4d51-834f-77320b0bf716").val();
-                }
-
-
                 form.append("data",JSON.stringify(data));
                 var settings = {
                 "url": "https://dev.kido.school/questions/apis/api.php",
@@ -27868,7 +27859,7 @@
                 // console.log(response);
                     $("#enquireModal").find("iframe").contents().find(".hs-button").trigger("click");
                     $("#enquireModal").css("display","none");
-                    window.location = "thankyou.html";
+                    window.location = "generic-flyer-cp-thankyou.html";
                 });
             });
 
