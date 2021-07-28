@@ -98,7 +98,9 @@ select.form-control:focus {
   box-shadow: none;
 }
 
-
+.banner-img{
+  width: 100%;
+}
 
 
 .form-label{
