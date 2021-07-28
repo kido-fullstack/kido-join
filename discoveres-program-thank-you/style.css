@@ -97,10 +97,10 @@ select.form-control:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-
+/* 
 .banner-img{
   width: 100%;
-}
+} */
 
 
 .form-label{
