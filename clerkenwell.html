@@ -25495,6 +25495,14 @@
                                                   </button>
                                                 </div>
                                                 <div class="modal-body">
+                                                    <div class="toast" data-delay="7000">
+                                                        <div class="toast-header">
+                                                          Form Errors
+                                                        </div>
+                                                        <div class="toast-body">
+                                                          Some text inside the toast body
+                                                        </div>
+                                                    </div>
                                                     <!-- <script charset="utf-8" type="text/javascript" src="hubspot-new.js"></script>
                                                     <script>
                                                         hbspt.forms.create({
@@ -28014,14 +28022,7 @@
         </div>
     </div>
     <div class="brz-root__container-after"></div>
-    <div class="toast" data-delay="7000">
-        <div class="toast-header">
-          Form Errors
-        </div>
-        <div class="toast-body">
-          Some text inside the toast body
-        </div>
-    </div>
+    
     <button onclick="topFunction()" id="myBtn" title="Go to top" class="topbtn shadow px-3 py-2 rounded"><i class="fa fa-angle-up"></i></button>
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 
@@ -28111,14 +28112,16 @@
                 // };
 
                 var data = {}
-                $("#exampleModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length ? data["firstname"] = $("#exampleModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val() :  errs += "Please provide email <br>",
-
+                $("#exampleModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length ? data["firstname"] = $("#exampleModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val() :  errs += "Please provide firstname <br>",
+                $("#exampleModal").find("iframe").contents().find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length ? data["email"] = $("#exampleModal").find("iframe").contents().find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val() :  errs += "Please provide email <br>",
+                $("#exampleModal").find("iframe").contents().find("#phone-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length ? data["phone"] = $("#exampleModal").find("iframe").contents().find("#phone-4e74926f-544f-4612-b0a7-9ce8318ae443").val() :  errs += "Please provide phone <br>",
+                
 
                 form.append("data",JSON.stringify(data));
                 if(errs.length){
-                $('.toast-body').html(errs);
-                $('.toast').toast('show');
-                $("#firstname").focus();
+                    $('.toast-body').html(errs);
+                    $('.toast').toast('show');
+                    $("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").focus();
                 }else{
                 var settings = {
                 "url": "https://dev.kido.school/questions/apis/api.php",
@@ -28130,7 +28133,6 @@
                 "data": form
                 };
 
-                  
                 $('.toast-header').html("Saving Data");
                 $('.toast-body').html("");
                 $('.toast').toast('show');
