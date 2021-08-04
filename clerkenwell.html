@@ -28039,45 +28039,7 @@
                 //     }
 
 
-        $(document).ready(function() {
-  
-            $("#hsForm_4e74926f-544f-4612-b0a7-9ce8318ae443").validate({
-                        rules:{
-                            firstname:{
-                                required:true,
-                                minlength: 2
-                            },
-                            email: {
-                                required: true,
-                                email: true
-                            },
-                            phone: { 
-                                required:true,
-                                digits: true,
-                                minlength: 10,
-                                maxlength: 10 
-                            },  
-                        },
-
-                        messages:{
-                        firstname: {
-                            required: "This field is required",
-                            minlength: "Please enter atleast two character"
-                        },
-                        email: {
-                            required: "This field is required",
-                            email: "Please enter a valid email id",
-                        },
-                        phone: { 
-                            required: "This field is required",
-                            digits: "Please enter a valid mobile number",
-                            minlength: "Please enter 10 digits only",
-                            maxlength: "Please enter 10 digits only" 
-                        },
-
-                        }
-                    });
-            });
+       
 
 
 
@@ -28112,6 +28074,45 @@
                 $.ajax(settings).done(function (response) {
                 // console.log(response);
                 $("#exampleModal").find("iframe").contents().find(".hs-button").trigger("click");
+                $(document).ready(function() {
+  
+                $("#hsForm_4e74926f-544f-4612-b0a7-9ce8318ae443").validate({
+                            rules:{
+                                firstname:{
+                                    required:true,
+                                    minlength: 2
+                                },
+                                email: {
+                                    required: true,
+                                    email: true
+                                },
+                                phone: { 
+                                    required:true,
+                                    digits: true,
+                                    minlength: 10,
+                                    maxlength: 10 
+                                },  
+                            },
+
+                            messages:{
+                            firstname: {
+                                required: "This field is required",
+                                minlength: "Please enter atleast two character"
+                            },
+                            email: {
+                                required: "This field is required",
+                                email: "Please enter a valid email id",
+                            },
+                            phone: { 
+                                required: "This field is required",
+                                digits: "Please enter a valid mobile number",
+                                minlength: "Please enter 10 digits only",
+                                maxlength: "Please enter 10 digits only" 
+                            },
+
+                            }
+                        });
+                });
                 $("#modal-success-submit").css("display","none");
                 window.location = "clerkenwell-thankyou.html";
                 });
