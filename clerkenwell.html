@@ -28014,13 +28014,23 @@
         </div>
     </div>
     <div class="brz-root__container-after"></div>
+    <div class="toast" data-delay="7000">
+        <div class="toast-header">
+          Form Errors
+        </div>
+        <div class="toast-body">
+          Some text inside the toast body
+        </div>
+    </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top" class="topbtn shadow px-3 py-2 rounded"><i class="fa fa-angle-up"></i></button>
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
     <script class="brz-script brz-script-polyfill" src="assets/ff6bd3cb0c34cf6736d82d880235b952.js"></script>
     <script class="brz-script brz-script-preview" src="assets/2afcebcc223eefa52b528130c9b6d2bd.js"></script>
     <script class="brz-script brz-script-preview-pro" src="assets/96e7b8ce2e3076c991a3f0bafd1f3af3.js"></script>
@@ -28039,45 +28049,45 @@
                 //     }
 
 
-        $(document).ready(function() {
+        // $(document).ready(function() {
   
-            $("#hsForm_4e74926f-544f-4612-b0a7-9ce8318ae443").validate({
-                        rules:{
-                            firstname:{
-                                required:true,
-                                minlength: 2
-                            },
-                            email: {
-                                required: true,
-                                email: true
-                            },
-                            phone: { 
-                                required:true,
-                                digits: true,
-                                minlength: 10,
-                                maxlength: 10 
-                            },  
-                        },
+        //     $("#hsForm_4e74926f-544f-4612-b0a7-9ce8318ae443").validate({
+        //                 rules:{
+        //                     firstname:{
+        //                         required:true,
+        //                         minlength: 2
+        //                     },
+        //                     email: {
+        //                         required: true,
+        //                         email: true
+        //                     },
+        //                     phone: { 
+        //                         required:true,
+        //                         digits: true,
+        //                         minlength: 10,
+        //                         maxlength: 10 
+        //                     },  
+        //                 },
 
-                        messages:{
-                        firstname: {
-                            required: "This field is required",
-                            minlength: "Please enter atleast two character"
-                        },
-                        email: {
-                            required: "This field is required",
-                            email: "Please enter a valid email id",
-                        },
-                        phone: { 
-                            required: "This field is required",
-                            digits: "Please enter a valid mobile number",
-                            minlength: "Please enter 10 digits only",
-                            maxlength: "Please enter 10 digits only" 
-                        },
+        //                 messages:{
+        //                 firstname: {
+        //                     required: "This field is required",
+        //                     minlength: "Please enter atleast two character"
+        //                 },
+        //                 email: {
+        //                     required: "This field is required",
+        //                     email: "Please enter a valid email id",
+        //                 },
+        //                 phone: { 
+        //                     required: "This field is required",
+        //                     digits: "Please enter a valid mobile number",
+        //                     minlength: "Please enter 10 digits only",
+        //                     maxlength: "Please enter 10 digits only" 
+        //                 },
 
-                        }
-                    });
-            });
+        //                 }
+        //             });
+        //     });
 
 
 
@@ -28085,22 +28095,31 @@
             $("body").on('click','#modal-success-submit',function(){
                 
                 // $("#hsForm_4e74926f-544f-4612-b0a7-9ce8318ae443").valid();
+                var errs = "";
 
                 var form = new FormData();
                 form.append("api", "save_hubspot_lead");
 
-                var data = {
-                    "firstname":$("#exampleModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                    "email":$("#exampleModal").find("iframe").contents().find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                    "mobilephone":$("#exampleModal").find("iframe").contents().find("#phone-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                    "desired_nursery_location":$("#exampleModal").find("iframe").contents().find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                    "home_or_village":"1",
-                    "url_from":window.location.href,
-                    "message":$("#exampleModal").find("iframe").contents().find("#message-4e74926f-544f-4612-b0a7-9ce8318ae443").val()
-                };
+                // var data = {
+                //     "firstname":$("#exampleModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length ? $("#exampleModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val() :  errs += "Please provide email <br>",
+                //     "email":$("#exampleModal").find("iframe").contents().find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                //     "mobilephone":$("#exampleModal").find("iframe").contents().find("#phone-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                //     "desired_nursery_location":$("#exampleModal").find("iframe").contents().find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                //     "home_or_village":"1",
+                //     "url_from":window.location.href,
+                //     "message":$("#exampleModal").find("iframe").contents().find("#message-4e74926f-544f-4612-b0a7-9ce8318ae443").val()
+                // };
+
+                var data = {}
+                $("#exampleModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length ? data["firstname"] = $("#exampleModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val() :  errs += "Please provide email <br>",
+
 
                 form.append("data",JSON.stringify(data));
-
+                if(errs.length){
+                $('.toast-body').html(errs);
+                $('.toast').toast('show');
+                $("#firstname").focus();
+                }else{
                 var settings = {
                 "url": "https://dev.kido.school/questions/apis/api.php",
                 "method": "POST",
@@ -28111,6 +28130,11 @@
                 "data": form
                 };
 
+                  
+                $('.toast-header').html("Saving Data");
+                $('.toast-body').html("");
+                $('.toast').toast('show');
+
                 $.ajax(settings).done(function (response) {
                 // console.log(response);
                 // if($("#hsForm_4e74926f-544f-4612-b0a7-9ce8318ae443").valid()){
@@ -28120,7 +28144,7 @@
                 // }
             
                 });
-                
+            }
             });
 
 
