@@ -25512,7 +25512,7 @@
                                                       </script> 
                                                     </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" id="modal-success-submit" [disabled]="proposalForm.invalid" class="modal-submit btn btn-primary">Submit</button>   
+                                                    <button type="button" id="modal-success-submit" class="modal-submit btn btn-primary">Submit</button>   
                                                 </div>
                                               </div>
                                             </div>
@@ -28084,7 +28084,7 @@
         $(document).ready(function(){
             $("body").on('click','#modal-success-submit',function(){
                 
-                $("#hsForm_4e74926f-544f-4612-b0a7-9ce8318ae443").valid();
+                // $("#hsForm_4e74926f-544f-4612-b0a7-9ce8318ae443").valid();
 
                 var form = new FormData();
                 form.append("api", "save_hubspot_lead");
@@ -28115,7 +28115,7 @@
                 // console.log(response);
                 // if($("#hsForm_4e74926f-544f-4612-b0a7-9ce8318ae443").valid()){
                     $("#exampleModal").find("iframe").contents().find(".hs-button").trigger("click");
-                    $("#modal-success-submit").css("display","none");
+                    // $("#modal-success-submit").css("display","none");
                     window.location = "clerkenwell-thankyou.html";
                 // }
             
