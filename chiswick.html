@@ -28257,7 +28257,7 @@
                 "contentType": false,
                 "data": form
                 };
-                $('#enquire-modal-submit').prop('disabled', false);
+                $('#enquire-modal-submit').prop('disabled', true);
                 $.ajax(settings).done(function (response) {
                 // console.log(response);
                     ifrm.find(".hs-button").trigger("click");
@@ -28265,7 +28265,7 @@
                     $("#enquireModal").css("display","none");
                     window.location = "chiswick-thankyou.html";
                     }
-                    $('#enquire-modal-submit').prop('disabled', true);
+                    $('#enquire-modal-submit').prop('disabled', false);
 
                 });
             });
