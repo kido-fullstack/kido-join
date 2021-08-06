@@ -2752,13 +2752,13 @@
 
                 $('#modal-success-submit').prop('disabled', true);
                 $.ajax(settings).done(function (response) {
-                // console.log(response);
-                ibfrm.find(".hs-button").trigger("click");
-                if(ibfrm.find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length > 0 && ibfrm.find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length > 0 && ibfrm.find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length > 0){
-                $("#exampleModal").css("display","none");
-                window.location = "camden-thankyou.html";
-                }
-                $('#modal-success-submit').prop('disabled', false);
+                    // console.log(response);
+                    ibfrm.find(".hs-button").trigger("click");
+                    if(ibfrm.find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length > 0 && ibfrm.find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length > 0 && ibfrm.find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length > 0){
+                    $("#exampleModal").css("display","none");
+                    window.location = "camden-thankyou.html";
+                    }
+                    $('#modal-success-submit').prop('disabled', false);
                 });
                 
             });

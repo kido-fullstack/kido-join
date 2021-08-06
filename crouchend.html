@@ -28239,15 +28239,17 @@
 
                 var form = new FormData();
                 form.append("api", "save_hubspot_lead");
+                
+                var ibfrm = $("#exampleModal").find("iframe").contents();
 
                 var data = {
-                    "firstname":$("#exampleModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                    "email":$("#exampleModal").find("iframe").contents().find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                    "mobilephone":$("#exampleModal").find("iframe").contents().find("#phone-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                    "desired_nursery_location":$("#exampleModal").find("iframe").contents().find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "firstname":ibfrm.find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "email":ibfrm.find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "mobilephone":ibfrm.find("#phone-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "desired_nursery_location":ibfrm.find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
                     "home_or_village":"1",
                     "url_from":window.location.href,
-                    "message":$("#exampleModal").find("iframe").contents().find("#message-4e74926f-544f-4612-b0a7-9ce8318ae443").val()
+                    "message":ibfrm.find("#message-4e74926f-544f-4612-b0a7-9ce8318ae443").val()
                 };
 
                 form.append("data",JSON.stringify(data));
@@ -28262,11 +28264,16 @@
                 "data": form
                 };
 
+                $('#modal-success-submit').prop('disabled', true);
+
                 $.ajax(settings).done(function (response) {
-                // console.log(response);
-                $("#exampleModal").find("iframe").contents().find(".hs-button").trigger("click");
-                $("#modal-success-submit").css("display","none");
-                window.location = "crouchend-thankyou.html";
+                    // console.log(response);
+                    ibfrm.find(".hs-button").trigger("click");
+                    if(ibfrm.find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length > 0 && ibfrm.find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length > 0 && ibfrm.find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length > 0){
+                    $("#exampleModal").css("display","none");
+                    window.location = "crouchend-thankyou.html";
+                    }
+                    $('#modal-success-submit').prop('disabled', false);
                 });
                 
             });
