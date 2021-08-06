@@ -27863,12 +27863,15 @@
                     // for (var pair of form.entries()) {
                     //     console.log(pair[0]+ ', ' + pair[1]); 
                     // }
-
+                $('#enquire-modal-submit').prop('disabled', true);
                 $.ajax(settings).done(function (response) {
-                // console.log(response);
-                    $("#enquireModal").find("iframe").contents().find(".hs-button").trigger("click");
+                    // console.log(response);
+                    ifrm.find(".hs-button").trigger("click");
+                    if(ifrm.find("#firstname-1904fcd3-6caf-4d51-834f-77320b0bf716").val().length > 0, ifrm.find("#email-1904fcd3-6caf-4d51-834f-77320b0bf716").val().length > 0 && ifrm.find("#choose_a_nursery-1904fcd3-6caf-4d51-834f-77320b0bf716").val().length > 0){
                     $("#enquireModal").css("display","none");
                     window.location = "generic-flyer-cp-thankyou.html";
+                    }
+                    $('#enquire-modal-submit').prop('disabled', false);
                 });
             });
 
