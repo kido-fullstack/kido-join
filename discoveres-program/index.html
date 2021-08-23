@@ -122,7 +122,7 @@
                               </div>
                         </div>
                     </div> -->
-                    <button type="button" id="form_submit" class="btn btn-sm btn-primary">Submit</button>
+                    <button type="button" id="form_submit" class="btn btn-sm btn-primary btn-submit">Submit</button>
                     </form>
                     <p class="thanku-text text-success pt-4"></p>
                 </div>
@@ -186,6 +186,8 @@
                 "contentType": false,
                 "data": form
                 };
+
+                $('.btn-submit').prop('disabled', true);
                 
                 $('.toast-header').html("Saving Data");
                 $('.toast-body').html("");
