@@ -26999,7 +26999,7 @@
                                         <p class="brz-lh-xs-2 brz-fs-xs-16 brz-lh-sm-2 brz-fs-sm-16 brz-text-sm-justify brz-text-xs-center brz-tp-uswoeqmkkkuzirnramfzkpjejbrytsjzzglf"><a href="https://kido.school/en/ourcentres/?srch-term=GreaterLondon" style="opacity: 0.7;" class="link--external brz-cp-color6" data-brz-link-type="external">Greater London</a></p>
                                         <p class="brz-lh-xs-2 brz-fs-xs-16 brz-lh-sm-2 brz-fs-sm-16 brz-text-sm-justify brz-text-xs-center brz-tp-uswoeqmkkkuzirnramfzkpjejbrytsjzzglf"><a href="https://kido.school/en/ourcentres/?srch-term=houston" style="opacity: 0.7;" class="link--external brz-cp-color6" data-brz-link-type="external">Houston</a></p>
                                         <p class="brz-lh-xs-2 brz-fs-xs-16 brz-lh-sm-2 brz-fs-sm-16 brz-text-sm-justify brz-text-xs-center brz-tp-uswoeqmkkkuzirnramfzkpjejbrytsjzzglf"><a href="https://kido.school/en/ourcentres/?srch-term=austin" style="opacity: 0.7;" class="link--external brz-cp-color6" data-brz-link-type="external">Austin</a></p>
-                                        <p class="brz-lh-xs-2 brz-fs-xs-16 brz-lh-sm-2 brz-fs-sm-16 brz-text-sm-justify brz-text-xs-center brz-tp-uswoeqmkkkuzirnramfzkpjejbrytsjzzglf"><a href="https://kido.school/en/ourcentres/?srch-term=HongKong" style="opacity: 0.7;" class="link--external brz-cp-color6" data-brz-link-type="external">Hong Kong</a></p>
+                                        <!-- <p class="brz-lh-xs-2 brz-fs-xs-16 brz-lh-sm-2 brz-fs-sm-16 brz-text-sm-justify brz-text-xs-center brz-tp-uswoeqmkkkuzirnramfzkpjejbrytsjzzglf"><a href="https://kido.school/en/ourcentres/?srch-term=HongKong" style="opacity: 0.7;" class="link--external brz-cp-color6" data-brz-link-type="external">Hong Kong</a></p> -->
                                         <p class="brz-lh-xs-2 brz-fs-xs-16 brz-lh-sm-2 brz-fs-sm-16 brz-text-sm-justify brz-text-xs-center brz-tp-uswoeqmkkkuzirnramfzkpjejbrytsjzzglf"><a href="https://kido.school/en/ourcentres/?srch-term=india" style="opacity: 0.7;" class="link--external brz-cp-color6" data-brz-link-type="external">India</a></p>
                                     </div>
                                 </div>
@@ -28025,14 +28025,16 @@
                 var form = new FormData();
                 form.append("api", "save_hubspot_lead");
 
+                var ibfrm = $("#exampleModal").find("iframe").contents();
+
                 var data = {
-                    "firstname":$("#exampleModal").find("iframe").contents().find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                    "email":$("#exampleModal").find("iframe").contents().find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                    "mobilephone":$("#exampleModal").find("iframe").contents().find("#phone-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
-                    "desired_nursery_location":$("#exampleModal").find("iframe").contents().find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "firstname":ibfrm.find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "email":ibfrm.find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "mobilephone":ibfrm.find("#phone-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
+                    "desired_nursery_location":ibfrm.find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val(),
                     "home_or_village":"1",
                     "url_from":window.location.href,
-                    "message":$("#exampleModal").find("iframe").contents().find("#message-4e74926f-544f-4612-b0a7-9ce8318ae443").val()
+                    "message":ibfrm.find("#message-4e74926f-544f-4612-b0a7-9ce8318ae443").val()
                 };
 
                 form.append("data",JSON.stringify(data));
@@ -28047,11 +28049,16 @@
                 "data": form
                 };
 
+                $('#modal-success-submit').prop('disabled', true);
+
                 $.ajax(settings).done(function (response) {
-                // console.log(response);
-                $("#exampleModal").find("iframe").contents().find(".hs-button").trigger("click");
-                $("#modal-success-submit").css("display","none");
-                window.location = "wandsworth-thankyou.html";
+                    // console.log(response);
+                    ibfrm.find(".hs-button").trigger("click");
+                    if(ibfrm.find("#firstname-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length > 0 && ibfrm.find("#email-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length > 0 && ibfrm.find("#choose_a_nursery-4e74926f-544f-4612-b0a7-9ce8318ae443").val().length > 0){
+                    $("#exampleModal").css("display","none");
+                    window.location = "wandsworth-thankyou.html";
+                    }
+                    $('#modal-success-submit').prop('disabled', false);
                 });
                 
             });
@@ -28089,11 +28096,14 @@
                 "data": form
                 };
 
+                $('#enquire-modal-submit').prop('disabled', true);
                 $.ajax(settings).done(function (response) {
-                // console.log(response);
+                    // console.log(response);
                     ifrm.find(".hs-button").trigger("click");
+                    if(ifrm.find("#firstname-1904fcd3-6caf-4d51-834f-77320b0bf716").val().length > 0 && ifrm.find("#email-1904fcd3-6caf-4d51-834f-77320b0bf716").val().length > 0 && ifrm.find("#choose_a_nursery-1904fcd3-6caf-4d51-834f-77320b0bf716").val().length > 0){
                     $("#enquireModal").css("display","none");
                     window.location = "wandsworth-thankyou.html";
+                    }
                 });
             });
 

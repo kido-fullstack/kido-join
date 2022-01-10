@@ -27167,7 +27167,7 @@
                                         <p class="brz-lh-xs-2 brz-fs-xs-16 brz-lh-sm-2 brz-fs-sm-16 brz-text-sm-justify brz-text-xs-center brz-tp-uswoeqmkkkuzirnramfzkpjejbrytsjzzglf"><a href="https://kido.school/en/ourcentres/?srch-term=GreaterLondon" style="opacity: 0.7;" class="link--external brz-cp-color6" data-brz-link-type="external">Greater London</a></p>
                                         <p class="brz-lh-xs-2 brz-fs-xs-16 brz-lh-sm-2 brz-fs-sm-16 brz-text-sm-justify brz-text-xs-center brz-tp-uswoeqmkkkuzirnramfzkpjejbrytsjzzglf"><a href="https://kido.school/en/ourcentres/?srch-term=houston" style="opacity: 0.7;" class="link--external brz-cp-color6" data-brz-link-type="external">Houston</a></p>
                                         <p class="brz-lh-xs-2 brz-fs-xs-16 brz-lh-sm-2 brz-fs-sm-16 brz-text-sm-justify brz-text-xs-center brz-tp-uswoeqmkkkuzirnramfzkpjejbrytsjzzglf"><a href="https://kido.school/en/ourcentres/?srch-term=austin" style="opacity: 0.7;" class="link--external brz-cp-color6" data-brz-link-type="external">Austin</a></p>
-                                        <p class="brz-lh-xs-2 brz-fs-xs-16 brz-lh-sm-2 brz-fs-sm-16 brz-text-sm-justify brz-text-xs-center brz-tp-uswoeqmkkkuzirnramfzkpjejbrytsjzzglf"><a href="https://kido.school/en/ourcentres/?srch-term=HongKong" style="opacity: 0.7;" class="link--external brz-cp-color6" data-brz-link-type="external">Hong Kong</a></p>
+                                        <!-- <p class="brz-lh-xs-2 brz-fs-xs-16 brz-lh-sm-2 brz-fs-sm-16 brz-text-sm-justify brz-text-xs-center brz-tp-uswoeqmkkkuzirnramfzkpjejbrytsjzzglf"><a href="https://kido.school/en/ourcentres/?srch-term=HongKong" style="opacity: 0.7;" class="link--external brz-cp-color6" data-brz-link-type="external">Hong Kong</a></p> -->
                                         <p class="brz-lh-xs-2 brz-fs-xs-16 brz-lh-sm-2 brz-fs-sm-16 brz-text-sm-justify brz-text-xs-center brz-tp-uswoeqmkkkuzirnramfzkpjejbrytsjzzglf"><a href="https://kido.school/en/ourcentres/?srch-term=india" style="opacity: 0.7;" class="link--external brz-cp-color6" data-brz-link-type="external">India</a></p>
                                     </div>
                                 </div>
@@ -28257,12 +28257,16 @@
                 "contentType": false,
                 "data": form
                 };
-
+                $('#enquire-modal-submit').prop('disabled', true);
                 $.ajax(settings).done(function (response) {
                 // console.log(response);
                     ifrm.find(".hs-button").trigger("click");
+                    if(ifrm.find("#firstname-1904fcd3-6caf-4d51-834f-77320b0bf716").val().length > 0 && ifrm.find("#email-1904fcd3-6caf-4d51-834f-77320b0bf716").val().length > 0 && ifrm.find("#choose_a_nursery-1904fcd3-6caf-4d51-834f-77320b0bf716").val().length > 0){
                     $("#enquireModal").css("display","none");
                     window.location = "chiswick-thankyou.html";
+                    }
+                    $('#enquire-modal-submit').prop('disabled', false);
+
                 });
             });
 
