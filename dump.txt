@@ -30,7 +30,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <script charset="utf-8" type="text/javascript" src="hubspot-new.js"></script>
+            <script charset="utf-8" type="text/javascript" src="https://f.hubspotusercontent10.net/hubfs/9397213/hubspot-new.js"></script>
             <script>
               hbspt.forms.create({
                   portalId: "9397213",
